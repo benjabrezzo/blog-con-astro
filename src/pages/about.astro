@@ -15,6 +15,13 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+
+import '../styles/global.css';
+import Navigation from '../pages/components/Navigation.astro';
+import Footer from '../pages/components/Footer.astro';
 ---
 
 <html lang="es">
@@ -24,11 +31,41 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+            h1 {
+                color: rgb(0, 66, 128);
+                font-size: 4rem;
+            }
+            .skill {
+                /*color: var(--skillColor);*/
+                /*font-weight: var(--fontWeigth);*/
+                /*text-transform: var(--textCase);*/
+                background-color: #007bff;
+                color: #ffffff;
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            p {
+                color: #555;
+                line-height: 1.6;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+
+        </style>
 	</head>
 	<body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
 
 		<h1>{pageTitle}</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
@@ -44,7 +81,7 @@ const goal = 3;
         </ul>
         <p>Mis habilidades son:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
         {happy && <p>¡Estoy feliz de aprender Astro!</p>}
@@ -52,6 +89,6 @@ const goal = 3;
         {finished && <p>¡He terminado este tutorial!</p>}
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-
+        <Footer />
 	</body>
 </html>

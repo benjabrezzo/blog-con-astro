@@ -1,0 +1,41 @@
+---
+import Social from './Social.astro';
+---
+<style>
+    footer {
+    background-color: #ffffff;
+    color: #575757;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos para los enlaces sociales */
+.Social {
+    margin: 0 10px;
+}
+
+.Social a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.Social a:hover {
+    color: #007bff;
+}
+
+/* Estilos para el texto de los enlaces sociales */
+.Social p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+</style>
+<footer>
+    Para ver más de mis proyectos visita mi 
+    <Social platform="GitHub" username = "benjabrezzo"/>
+    <p>Seguime en mis redes:
+    <Social platform="Twitter" username="benjabrezzo"/>,
+    <Social platform="Instagram" username="benjabrezzo"/>,
+    <Social platform="Linkedin" username="/in/benjamin-brezzo"/>
+    </p>
+</footer>
