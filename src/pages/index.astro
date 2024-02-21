@@ -1,7 +1,7 @@
 ---
 const pageTitle = "Página de inicio";
 import '../styles/global.css';
-import Navigation from '../pages/components/Navigation.astro';
+import Header from '../pages/components/Header.astro';
 import Footer from '../pages/components/Footer.astro';
 ---
 
@@ -14,8 +14,11 @@ import Footer from '../pages/components/Footer.astro';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>

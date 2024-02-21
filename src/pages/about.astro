@@ -20,7 +20,7 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 
 import '../styles/global.css';
-import Navigation from '../pages/components/Navigation.astro';
+import Header from '../pages/components/Header.astro';
 import Footer from '../pages/components/Footer.astro';
 ---
 
@@ -65,7 +65,7 @@ import Footer from '../pages/components/Footer.astro';
         </style>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
 
 		<h1>{pageTitle}</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
@@ -90,5 +90,8 @@ import Footer from '../pages/components/Footer.astro';
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
         <Footer />
+        <script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
